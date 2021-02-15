@@ -1,0 +1,44 @@
+/* Loading spinner */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    img {
+        /* 5:1 ratio */
+        max-width: 350px;
+        max-height: 70px;
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        color: $white;
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 1.75rem;
+    }
+
+    .loader {
+        border: 10px solid $grey;
+        border-top: 10px solid $dark;
+        border-radius: 50%;
+        width: 75px;
+        height: 75px;
+        animation: spin 1s linear infinite;
+    }
+}
+
+.show-loader {
+    display: block;
+}
+
+.hide-loader {
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

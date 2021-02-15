@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.scss';
+import 'react-toastify/dist/ReactToastify.css';
+import React, { useState, useEffect } from "react";
+import { ToastContainer, Zoom } from "react-toastify";
+import { withRouter, Switch, Route, Redirect } from "react-router-dom";
+import checkToken from "./helpers/authentication/checkToken";
+import AuthenticationRouter from "./screens/authentication/AuthenticationRouter";
+import DashboardRouter from "./screens/dashboard/DashboardRouter";
 
-function App() {
+export default withRouter(() => {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    console.log("effect fired App.js")
+    const token = sessionStorage.getItem("token");
+    checkToken(token, user, setUser)
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Switch>
+        {/* Authentication Screens */}
+        <Route path="/authentication">
+          <AuthenticationRouter user={user} setUser={setUser} />
+        </Route>
+        {/* Dashboard */}
+        <Route path="/dashboard">
+          <DashboardRouter user={user} setUser={setUser} />
+        </Route>
+        <Route 
+          path="/*" 
+          render={() => user ? <Redirect to="/dashboard" /> : <Redirect to="/authentication" />}
+        />
+      </Switch>
+      {/* Notification container */}
+      <ToastContainer 
+        position="bottom-center"
+        closeButton={true}
+        hideProgressBar={true}
+        draggable={false}
+        transition={Zoom}
+        limit={1}
+        autoClose={3000}
+      />
     </div>
   );
-}
-
-export default App;
+})

@@ -1,0 +1,28 @@
+// BASE
+@import './base/_directory';
+// SCREENS
+@import './screens/directory';
+
+body {
+    background: $light;
+    font-family: $font;
+    color: $white;
+}
+
+button {
+    padding: .25rem;
+    background: $light;
+    border-radius: $card-border-radius;
+    color: $white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
+    border: 1px solid transparent;
+    outline: none;
+
+    &:hover, & :focus {
+        background: $light-hover;
+        color: $white-hover;
+        outline: none;
+    }
+}

@@ -1,0 +1,70 @@
+.header {
+    background: $dark;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+
+    img {
+        height: 40px;
+    }
+    .logo-large {
+        display: block;
+    }
+
+    .logo-small {
+        display: none;
+    }
+
+    .user-card {
+        display: flex;
+        align-items: center;
+        background: $light;
+        padding: .5rem;
+        border-radius: $card-border-radius;
+
+        .avatar {
+            font-size: 1.5rem;
+            padding: .25rem 1rem;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .information {
+            margin-right: 5px;
+            h1 {
+                font-size: 1rem;
+                margin-bottom: 0;
+    
+                &:last-of-type {
+                    color: $white-hover;
+                }
+            }
+        } 
+
+        button {
+            svg {
+                width: 25px;
+                height: 25px;
+                color: $white;
+                &:focus, &:hover {
+                    color: $white-hover;
+                }
+            }
+
+            &:first-of-type {
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .logo-large {
+        display: none !important;
+    }
+
+    .logo-small {
+        display: block !important;
+    }
+}
