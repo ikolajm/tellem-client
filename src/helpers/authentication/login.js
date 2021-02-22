@@ -24,6 +24,7 @@ export default async (e, email, password, setUser) => {
         }
     );
     request = request.data
+    let user = request.user
     
     if (request.status === "ERROR") {
         return toast.error(request.message + "!")
@@ -33,6 +34,6 @@ export default async (e, email, password, setUser) => {
     toast.success("Successfully logged in!");
     setTimeout(() => {
         sessionStorage.setItem("token", request.sessionToken)
-        setUser(request.user)
+        setUser(user)
     }, 500)
 }

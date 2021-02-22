@@ -4,7 +4,16 @@
 @import "./authentication/signup";
 
 // Dashboard
+@import "./dashboard/shared";
 @import "./dashboard/header";
+@import "./dashboard/navigation";
+@import "./dashboard/history";
+@import "./dashboard/friends.scss";
+@import "./dashboard/conversation.scss";
+@import "./dashboard/modal.scss";
+
+// Profile
+@import "./dashboard/profile.scss";
 
 // Loading
 @import "./loading.scss";

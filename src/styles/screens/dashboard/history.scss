@@ -1,0 +1,24 @@
+.group-avatar {
+    padding: .3rem .6rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+        width: 15px !important;
+        height: 25px !important;
+    }
+}
+
+.history-button-nav {
+    button {
+        display: none;
+    }
+
+    .visible {
+        display: block;
+    }
+}
+
+.create-conversation-content {
+    margin-top: 1rem;
+}

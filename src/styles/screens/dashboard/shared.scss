@@ -1,0 +1,115 @@
+.route-container {
+    padding: 1rem 0rem;
+
+    button {
+        background: none;
+        outline: none;
+        &:hover, &:focus {
+            background: none;
+            color: $warning;
+        }
+    }
+
+    .success {
+        background: $success;
+        color: $white;
+        margin-left: 5px;
+
+        &:hover, &:focus {
+            color: $white-hover;
+            background: $success-hover;
+        }
+    }
+
+    .active-route {
+        color: $warning;
+    }
+
+}
+
+.data-container {
+    background: $dark;
+    padding: .5rem;
+    border-radius: $card-border-radius;
+
+    .conversation-item {
+        display: flex;
+        align-items: center;
+        margin-top: .75rem;
+       
+
+        .user-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+
+            .avatar {
+                margin-right: 5px;
+                font-size: 1rem;
+                padding: .25rem .75rem;
+                border-radius: 50%;
+                margin-right: 5px;
+
+                svg {
+                    width: 12.5px;
+                    height: 15px;
+                }
+            }
+
+            h1  {
+                font-size: .75rem;
+                margin-bottom: 0;
+                color: $white-hover;
+                text-decoration: none;
+
+                &:first-of-type {
+                    font-size: 1rem;
+                    margin-bottom: .25rem;
+                    color: $white;
+                }
+            }
+        }
+
+        .message {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .button-nav {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+
+            button {
+                width: 30px;
+                svg {
+                    color: $white;
+                    width: 20px;
+                    height: 20px;
+                }
+                &:first-of-type {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        &:first-of-type {
+            margin-top: 0rem;
+        }
+    }
+}
+
+.null-header {
+    margin-bottom: 0rem;
+    padding: .25rem;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+    .message {
+        display: none;
+    }
+}

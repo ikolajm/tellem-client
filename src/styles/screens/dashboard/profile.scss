@@ -1,0 +1,48 @@
+.profile {
+    padding: 1rem;
+    height: calc(100vh - 92px);
+    overflow-y: scroll;
+    h1 {
+        font-size: 1.5rem;
+        &:last-of-type {
+            margin-top: 1rem;
+        }
+    }
+
+    .card-container {
+        background: $dark;
+        border-radius: $card-border-radius;
+        padding: 1rem;
+
+        .input-container {
+            margin-top: .5rem;
+
+            &:first-of-type {
+                margin-top: 0rem;
+            }
+        }
+    }
+
+    .action-buttons {
+        padding-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        button {
+            background: $grey;
+
+            &:hover, &:focus {
+                background: $grey-hover;
+            }
+
+        }
+        .save {
+            background: $success !important;
+
+            &:hover, &:focus {
+                background: $success-hover;
+            }
+        }
+    }
+}

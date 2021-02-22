@@ -7,11 +7,9 @@ import { Link } from "react-router-dom";
 import logout from "../../helpers/authentication/logout";
 
 export default ({user, setUser}) => {
-    console.log(user)
     const background = {
         backgroundColor: user.background
     }
-    console.log("header")
     return (
         <div className="header">
             {/* Logo */}

@@ -1,9 +1,37 @@
-.dashbaord-navigation {
-    a {
+@mixin activeLink {
+    background: var(--dark);
+    text-decoration: none;
+}
 
+.dashboard-navigation {
+    height: 50px;
+    width: 100%;
+    padding: 1rem;
+    background: $grey;
+    display: flex;
+    align-items: center;
+    color: $white;
+    // position: fixed;
+    // top: 92px;
+    // z-index: 2;
+    box-shadow: 0 1px 5px $dark;
+
+    a {
+        padding: .25rem .5rem;
+        color: var(--white);
+        border-radius: 5px;
+        transition: .3s;
+
+        &:first-of-type {
+            margin-right: 10px;
+        }
+
+        &:focus, &:hover {
+            @include activeLink();
+        }
     }
 
     .active-nav-link {
-        
+        @include activeLink()
     }
 }

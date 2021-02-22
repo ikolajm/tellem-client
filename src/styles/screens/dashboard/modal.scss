@@ -1,0 +1,47 @@
+.modal-header {
+    background: $dark;
+    h1 {
+        font-size: 1.25rem !important;
+        margin-bottom: 0rem;
+    }
+    border: none;
+}
+
+.modal-body {
+    background: $grey;
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        .content {
+            border-radius: $card-border-radius;
+        }
+    }
+}
+
+.modal-footer {
+    background: $dark;
+    border: none;
+    .modal-buttons {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        button {
+            &:last-of-type {
+                background: $success;
+            }
+            &:hover {
+                &:first-of-type {
+                    background: $error-hover;
+                }
+
+                &:last-of-type {
+                    background: $success-hover;
+                }
+            }
+        }
+    }
+}

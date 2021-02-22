@@ -10,7 +10,6 @@ import DashboardRouter from "./screens/dashboard/DashboardRouter";
 export default withRouter(() => {
   const [user, setUser] = useState(null);
   useEffect(() => {
-    console.log("effect fired App.js")
     const token = sessionStorage.getItem("token");
     checkToken(token, user, setUser)
   })

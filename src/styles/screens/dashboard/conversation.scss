@@ -1,0 +1,161 @@
+.dashboard-navigation {
+    .back {
+        margin-right: 10px;
+        &:hover, &:focus {
+            a {
+                color: $white-hover !important;
+            }
+        }
+        a {
+            margin-right: 0px;
+
+            &:hover, &:focus {
+                background: transparent;
+                color: $white-hover !important;
+            }
+        }
+    }
+}
+
+.conversation-nav {
+    .information {
+        display: flex;
+        align-items: center;
+        // max-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        svg {
+            margin-right: 5px;
+        }
+
+        h1 {
+            font-size: 1rem;
+            margin-bottom: 0rem;
+
+        }
+    }
+
+    .custom-tooltip {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+
+        &:hover {
+            .tooltip-inner {
+                visibility: visible;
+            }
+        }
+
+        .tooltip-inner {
+            visibility: hidden;
+            width: 120px;
+            background-color: $dark;
+            color: $white;
+            padding: 5px;
+            border-radius: $card-border-radius;
+            position: absolute;
+            top: 1.5rem;
+            left: -3rem;
+            z-index: 1;
+            text-align: left;
+
+            span {
+                cursor: pointer;
+                // transition: .3s;
+                &:hover, &:focus {
+                    color: $warning;
+                }
+            }
+        }
+    }
+}
+
+.view-user-modal {
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    .data-container {
+        margin: .5rem 0rem !important;
+        max-height: 175px;
+        overflow-y: scroll;
+
+    };
+    .current-users {
+        .user-badge {
+            background: $dark;
+            display: inline-block;
+            margin-right: 5px;
+            margin-top: 5px;
+            padding: .5rem;
+            border-radius: $card-border-radius
+        }
+
+        .newSelect {
+            background: $warning;
+        }
+    }
+}
+
+/* Customize the label (the container) */
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:hover {
+        input ~ .checkmark {
+            background: $white;
+        }
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .checkmark {
+            background-color: $white;
+        }
+
+        &:checked ~ .checkmark:after {
+            display: block;
+        }
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: transparent;
+        border: 1px solid $white;
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid $dark;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+    }
+  }

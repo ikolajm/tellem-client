@@ -5,19 +5,16 @@ import Header from "../dashboard/Header";
 import History from "../dashboard/history/History";
 import Friends from "../dashboard/friends/Friends";
 import Conversation from "../dashboard/conversation/Conversation";
-import Profile from "../dashboard/Profile";
-import Loading from "../Loading";
+import Profile from "../dashboard/profile/Profile";
+import Loading from "../loading/Loading";
 import MainDashboardDirectory from "./contextual navbars/MainDashboardDirectory";
 
 export default ({user, setUser}) => {
     let history = useHistory();
     useEffect(async () => {
-        console.log("effect fired Dashrouter")
         const token = sessionStorage.getItem("token");
         let tokenCheck = await checkToken(token, user, setUser);
-        console.log(tokenCheck)
         if (tokenCheck === "FAIL") {
-            console.log("The token failed");
             history.push("/authentication/login")
         }
     })
@@ -31,12 +28,12 @@ export default ({user, setUser}) => {
                     <Header user={user} />
                     <Switch>
                         {/* History */}
-                        <Route exact path={`/dashboard/history`}>
+                        <Route path={`/dashboard/history`}>
                             <MainDashboardDirectory />
                             <History user={user} />
                         </Route>
                         {/* Friends */}
-                        <Route exact path={`/dashboard/friends`}>
+                        <Route path={`/dashboard/friends`}>
                             <MainDashboardDirectory />
                             <Friends user={user} />
                         </Route>
@@ -50,7 +47,7 @@ export default ({user, setUser}) => {
                         </Route>
                         {/* Default */}
                         <Route 
-                            path={`*`}
+                            path={`/*`}
                             render={() => <Redirect to="/dashboard/history" /> }
                         />
                     </Switch>

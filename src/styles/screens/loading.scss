@@ -1,3 +1,19 @@
+@mixin loading($circleSize) {
+    border: 10px solid $grey;
+    border-top: 10px solid $dark;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    height: $circleSize;
+    width: $circleSize;
+}
+
+@mixin loadingHeader($fontSize) {
+    color: $white;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: $fontSize;
+}
+
 /* Loading spinner */
 .loading-container {
     display: flex;
@@ -8,25 +24,40 @@
 
     img {
         /* 5:1 ratio */
-        max-width: 350px;
-        max-height: 70px;
+        max-width: 300px;
+        max-height: 60px;
         margin-bottom: 1rem;
     }
 
     h1 {
-        color: $white;
-        margin-top: 1rem;
-        text-align: center;
-        font-size: 1.75rem;
+        @include loadingHeader(1.5rem)
     }
 
     .loader {
-        border: 10px solid $grey;
-        border-top: 10px solid $dark;
-        border-radius: 50%;
-        width: 75px;
-        height: 75px;
-        animation: spin 1s linear infinite;
+        @include loading(75px);
+    }
+}
+
+/* Loading spinner - small */
+.loading-container-small {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        /* 5:1 ratio */
+        max-width: 300px;
+        max-height: 60px;
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        @include loadingHeader(1rem)
+    }
+
+    .loader {
+        @include loading(50px);
     }
 }
 

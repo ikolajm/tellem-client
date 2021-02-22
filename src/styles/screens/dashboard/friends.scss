@@ -1,0 +1,82 @@
+// Friend Search Modal
+.friend-search {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    .input {
+        label {
+            margin-bottom: .25rem;
+        }
+
+        input {
+            height: 30px;
+        }
+
+        &:last-of-type {
+            margin: 0rem 10px;
+        }
+    }
+
+    .search {
+        background: $dark;
+    }
+
+}
+.search-results {
+    margin-top: 1rem !important;
+
+
+    .null-header {
+        margin-bottom: 0rem;
+    }
+
+    .search-results-buttons {
+        button {
+            width: auto !important;
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+    }
+}
+
+// Pending friends
+.incoming {
+    margin-bottom: 1rem;
+    h1 {
+        font-size: 1.25rem;
+        text-decoration: underline;
+    }
+
+    .button-nav {
+        button {
+            &:hover, &:focus {
+
+                &:first-of-type {
+                    background: $success-hover;
+                }
+
+                &:last-of-type {
+                    background: $error-hover;
+                }
+            }
+        }
+    }
+}
+
+.outgoing {
+    h1 {
+        font-size: 1.25rem;
+        text-decoration: underline;
+    }
+
+    .button-nav {
+        button {
+            margin-right: 0rem !important;
+            width: auto !important;
+        }
+    }
+}
