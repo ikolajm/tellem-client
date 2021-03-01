@@ -18,7 +18,7 @@ export default async  (e, request) => {
         }
     )
     axiosRequest = axiosRequest.data
-    if (axiosRequest.status === "STATUS") {
+    if (axiosRequest.status === "SUCCESS") {
         buttonNav.innerHTML = ""
         buttonNav.insertAdjacentHTML("afterend",
         "<button>Declined ✘</div>")
