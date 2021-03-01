@@ -5,7 +5,7 @@ import APIURL from "../../../environment/apirouter";
 export default async  (e, request) => {
     let target = await rootTarget(e);
     let buttonNav = target.parentNode;
-    let axiosRequest = await axios.post(
+    let axiosRequest = await axios.delete(
         `${APIURL}/friends/request/decline/${request.uuid}`,
         {
             

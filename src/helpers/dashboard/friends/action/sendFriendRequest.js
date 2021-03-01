@@ -19,7 +19,7 @@ export default async  (e, uuid) => {
         }
     )
     request = request.data
-    if (request.status === "STATUS") {
+    if (request.status === "SUCCESS") {
         toast.success("Friend request sent successfully")
         target.classList.remove("visible");
         target.nextSibling.classList.add("visible");
