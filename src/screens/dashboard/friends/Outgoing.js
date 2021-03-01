@@ -13,7 +13,7 @@ export default ({data}) => {
                             data.length > 0 ?
                                 data.map(request => {
                                     let background = {
-                                        background: request.user.background
+                                        background: request.user ? request.user.background : "pink"
                                     }
                                     return (
                                         <Fragment>
