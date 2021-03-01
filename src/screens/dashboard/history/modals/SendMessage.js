@@ -25,7 +25,7 @@ export default ({user, open, setModal, friends, createConversation}) => {
             return toast.error("Please make sure the message has content")
         }
 
-        createConversation(e, selected, content)
+        createConversation(e, selected[0], content)
     }
 
     const filterFriends = (string) => {
