@@ -67,38 +67,40 @@ export default ({user}) => {
                                 <LoadingSmall text="Gathering friends..." /> :
                                 <div className="data-container">
                                     {
-                                        data.map(friend => {
-                                            let background = {
-                                                background: friend.background
-                                            }
-                                            return (
-                                                <div className="conversation-item">
-                                                    {/* User */}
-                                                    <div className="user-container">
-                                                        <div style={background} className="avatar">
-                                                            <span>{friend.username.substring(0, 1)}</span>
+                                        data.length > 0 ?
+                                            data.map(friend => {
+                                                let background = {
+                                                    background: friend.background
+                                                }
+                                                return (
+                                                    <div className="conversation-item">
+                                                        {/* User */}
+                                                        <div className="user-container">
+                                                            <div style={background} className="avatar">
+                                                                <span>{friend.username.substring(0, 1)}</span>
+                                                            </div>
+                                                            {/* Name and last message receieved */}
+                                                            <div className="information">
+                                                                <h1>{friend.username}</h1>
+                                                                <h1>#{friend.idCode}</h1>
+                                                            </div>
                                                         </div>
-                                                        {/* Name and last message receieved */}
-                                                        <div className="information">
-                                                            <h1>{friend.username}</h1>
-                                                            <h1>#{friend.idCode}</h1>
+                                                        {/* Last Message */}
+                                                        <div className="message">
+                                                            {
+                                                                friend.statusMessage && friend.statusMessage.trim() !== "" ?
+                                                                    "'" + friend.statusMessage + "'" : <em>No status available</em>
+                                                            }
+                                                        </div>
+                                                        {/* Option menu */}
+                                                        <div className="button-nav">
+                                                            {/* Create Message */}
+                                                            <button onClick={() => createMessage(friend)} className="visible"><AiFillMessage /></button>
                                                         </div>
                                                     </div>
-                                                    {/* Last Message */}
-                                                    <div className="message">
-                                                        {
-                                                            friend.statusMessage && friend.statusMessage.trim() !== "" ?
-                                                                "'" + friend.statusMessage + "'" : <em>No status available</em>
-                                                        }
-                                                    </div>
-                                                    {/* Option menu */}
-                                                    <div className="button-nav">
-                                                        {/* Create Message */}
-                                                        <button onClick={() => createMessage(friend)} className="visible"><AiFillMessage /></button>
-                                                    </div>
-                                                </div>
-                                            )
-                                        })
+                                                )
+                                            })
+                                        : "No friends at the moment"
                                     }
                                     {/* Send Message Modal */}
                                     {

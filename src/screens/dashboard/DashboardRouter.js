@@ -25,7 +25,7 @@ export default ({user, setUser}) => {
                 <Loading text="Redirecting you to your dashboard..." />
             :
                 <div>
-                    <Header user={user} />
+                    <Header user={user} setUser={setUser} />
                     <Switch>
                         {/* History */}
                         <Route path={`/dashboard/history`}>
