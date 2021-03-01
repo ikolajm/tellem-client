@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { FaStopwatch } from "react-icons/fa";
 
 export default ({data}) => {
