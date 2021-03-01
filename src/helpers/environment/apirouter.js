@@ -5,7 +5,7 @@ switch( window.location.hostname) {
         APIURL = 'http://localhost:3005';
         break;
     case 'tellem-messenger.herokuapp.com' :
-        APIURL = 'https://tellem-messenger.herokuapp.com';
+        APIURL = 'https://tellem-server.herokuapp.com';
 }
 
 export default APIURL;
