@@ -18,7 +18,7 @@ export default ({data}) => {
                                     return (
                                         <Fragment>
                                             {
-                                                request.user.username ?
+                                                request.user ?
                                                     <div className="conversation-item">
                                                         {/* User */}
                                                         <div className="user-container">
