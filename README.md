@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-## To view the API repository
+# To view the API repository
 Follow this link: https://github.com/ikolajm/tellem-server
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
